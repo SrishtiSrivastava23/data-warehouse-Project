@@ -1,0 +1,11 @@
+CREATE EXTERNAL TABLE ext_station (
+    station_id VARCHAR(50),
+    name VARCHAR(75),
+    latitude FLOAT,
+    longitude FLOAT
+)
+WITH (
+    LOCATION = '/divy-extract/',
+    DATA_SOURCE = divvy_data_source,
+    FILE_FORMAT = csv_format
+);

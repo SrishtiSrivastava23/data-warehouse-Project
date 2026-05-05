@@ -1,0 +1,14 @@
+CREATE EXTERNAL TABLE ext_trip (
+    trip_id VARCHAR(50),
+    rideable_type VARCHAR(75),
+    start_at DATETIME,
+    ended_at DATETIME,
+    start_station_id VARCHAR(50),
+    end_station_id VARCHAR(50),
+    rider_id INT
+)
+WITH (
+    LOCATION = '/divy-extract/',
+    DATA_SOURCE = divvy_data_source,
+    FILE_FORMAT = csv_format
+);

@@ -1,0 +1,15 @@
+CREATE EXTERNAL TABLE ext_rider (
+    rider_id INT,
+    first VARCHAR(50),
+    last VARCHAR(50),
+    address VARCHAR(100),
+    birthday DATE,
+    account_start_date DATE,
+    account_end_date DATE,
+    is_member BIT
+)
+WITH (
+    LOCATION = '/divy-extract/',
+    DATA_SOURCE = divvy_data_source,
+    FILE_FORMAT = csv_format
+);

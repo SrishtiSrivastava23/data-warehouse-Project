@@ -1,0 +1,11 @@
+CREATE EXTERNAL TABLE ext_payment (
+    payment_id INT,
+    date DATE,
+    amount DECIMAL(10,2),
+    rider_id INT
+)
+WITH (
+    LOCATION = '/divy-extract/',
+    DATA_SOURCE = divvy_data_source,
+    FILE_FORMAT = csv_format
+);
