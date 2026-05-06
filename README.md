@@ -1,0 +1,47 @@
+# Created a data warehouse pipeline in Azure Synapse using bike data.
+
+## Technologies Used
+
+### Cloud Platform
+- **Microsoft Azure**  
+  Cloud platform used to host and manage all data services.
+
+### Data Warehouse / Query Engine
+- **Azure Synapse Analytics (Serverless SQL Pool)**  
+  - Enables running SQL queries without managing infrastructure  
+  - Provides on-demand, scalable query processing over data lake
+
+### Data Storage
+- **Azure Data Lake Storage Gen2**  
+  - Stores raw CSV files  
+  - Data includes:
+    - Rider data  
+    - Trip data  
+    - Payment data  
+    - Station data  
+
+### Database & SQL Features
+- **T-SQL (Transact-SQL)**  
+  - Used for writing all queries and transformations  
+
+- **External Tables**  
+  - Allow querying data directly from the data lake without ingestion  
+
+- **CETAS (CREATE EXTERNAL TABLE AS SELECT)**  
+  - Used to transform data  
+  - Helps in creating structured tables from raw data  
+  - Enables building optimized datasets for analytics  
+
+### Data Modeling
+- **Star Schema Design**  
+  - Optimized for analytical queries and reporting  
+
+  **Fact Tables:**
+  - `fact_trip`
+  - `fact_payment`
+
+  **Dimension Tables:**
+  - `dim_rider`
+  - `dim_station`
+  - `dim_date`
+  - `dim_account`
